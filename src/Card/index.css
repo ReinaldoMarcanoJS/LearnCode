@@ -1,0 +1,108 @@
+.learn-code-h1{
+    margin: 0px;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.section-content-card{
+    padding: 70px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+.section-info{
+    display: flex;
+    align-items: center;
+    font-size: var(--sizefont);
+}
+.p-info-card{
+    font-size: 15px;
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.835);
+
+}
+
+.button-subscription{
+    width: 100%;
+    margin-top: 40px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    background: var(--Blue);
+    padding: 16px 70px;
+    line-height: 25px;
+    box-shadow:0px 7px 0px 0px rgb(0 0 0 / 19%); ;
+    -webkit-box-shadow: 0px 7px 0px 0px rgb(0 0 0 / 19%);
+    border: none;
+}
+.button-subscription:active{
+    background: hsl(249, 10%, 26%);;
+    
+}
+.span-button{
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.div-form{
+    width: 100%;
+    margin: 20px 0px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding-top:14px;
+    box-shadow: 0px 7px 0px 0px rgb(0 0 0 / 19%); ;
+    -webkit-box-shadow: 0px 7px 0px 0px rgb(0 0 0 / 19%);
+}
+
+.input-form{
+    margin: 8px 0px;
+    height: 40px;
+    width: 81%;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border-color: var(--Grayish-Blue);
+    outline: none;
+    border: solid 0px hsl(246, 25%, 77%,0.4);
+    border-width: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-weight: 600;
+}
+.button-form-card{
+    margin: 8px 0px;
+    height: 50px;
+    width: 87%;
+    padding: 13px 0px 7px;
+    border-radius: 5px;
+    background: var(--Green);
+    color: #fff;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-bottom: solid 3px rgba(59, 159, 116, 0.869);
+} 
+.button-form-card:active{
+    background:hsl(154, 53%, 47%) ;
+}
+
+.terms-and-service-p{
+    color: var(--Grayish-Blue);
+    font-size: 11px;
+    margin: 10px 20px;
+}
+.terms-and-service-a{
+    color:var(--Red);
+    font-weight: 700;
+}
+.terms-and-service-a:active{
+    color: hsl(0, 76%, 65%);
+}
