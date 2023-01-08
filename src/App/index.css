@@ -3,19 +3,37 @@ html,body{
     height: 100vh;
     padding:0px;
     margin: 0px;
-
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    justify-content: center;
 }
+
+
 
 html{
     background: var(--Red);
+    background-image: var(--background-Mobile);
 
 }
+
 .app{
-    background:var(--background-Mobile);
-    width: 100%;
+    width: 375px;
     height: 100%;
     display: block;
 
 }
+@media (min-width:1280px){
+    body{
+        justify-content: space-between;
+        padding: 0px;
+    }
+    html{
+        padding: 0px;
+    }
+    .app{
+        width: 100%;
+    }
+    }
 
 
