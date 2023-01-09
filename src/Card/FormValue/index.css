@@ -1,0 +1,117 @@
+.button-subscription{
+    width: 100%;
+    margin-top: 40px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.708);
+    font-size: 14px;
+    background: var(--Blue);
+    padding: 16px 70px;
+    line-height: 25px;
+    box-shadow:0px 7px 0px 0px rgb(0 0 0 / 19%); ;
+    -webkit-box-shadow: 0px 7px 0px 0px rgb(0 0 0 / 19%);
+    border: none;
+}
+.button-subscription:active{
+    background: hsl(249, 10%, 26%);;
+    
+}
+.span-button{
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.div-form{
+    width: 100%;
+    margin: 20px 0px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding-top:14px;
+    box-shadow: 0px 7px 0px 0px rgb(0 0 0 / 19%); ;
+    -webkit-box-shadow: 0px 7px 0px 0px rgb(0 0 0 / 19%);
+}
+
+.input-form{
+    margin: 8px 0px 4px;
+    height: 40px;
+    width: 81%;
+    padding: 0px 15px;
+    border-radius: 5px;
+    border-color: var(--Grayish-Blue);
+    outline: none;
+    border: solid 0px hsl(246, 25%, 77%,0.4);
+    border-width: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.input-form:hover{
+    border: solid 1px rgba(0, 0, 0, 0.636)
+}
+.button-form-card{
+    margin: 15px 0px;
+    height: 50px;
+    width: 87%;
+    padding: 13px 0px 7px;
+    border-radius: 5px;
+    background: var(--Green);
+    color: #fff;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-bottom: solid 3px rgba(59, 159, 116, 0.869);
+} 
+.button-form-card:active{
+    background:hsl(154, 53%, 47%) ;
+}
+
+.terms-and-service-p{
+    color: var(--Grayish-Blue);
+    font-size: 11px;
+    margin: 0px 20px 40px 20px;
+    padding: 0px 10px;
+
+}
+.terms-and-service-a{
+    color:var(--Red);
+    font-weight: 700;
+}
+.terms-and-service-a:active{
+    color: hsl(0, 76%, 65%);
+}
+.span-error-input{
+    text-align: end;
+    padding-right: 27px;
+    color: var(--Red);
+    font-family: 'Poppins', sans-serif ;
+    font-weight:500;
+    margin: 0px;
+    font-size: 13px;
+    font-style: italic;
+    display: none;
+}
+
+@media (min-width:1280px){
+        
+        
+        .section-form-content{
+            width: 500px;
+        }
+       
+        .input-form{
+            margin: 12px 0px 5px;
+
+            padding: 5px 5px 5px 25px;
+            font-size: 15px;
+        }
+        .button-subscription{
+            color: rgba(255, 255, 255, 0.708);
+
+        }
+        
+}

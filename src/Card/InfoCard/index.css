@@ -1,0 +1,36 @@
+.learn-code-h1{
+    margin: 0px;
+    font-weight: 600;
+    font-size: 25px;
+}
+.section-info{
+    display: flex;
+    align-items: center;
+    font-size: var(--sizefont);
+}
+.p-info-card{
+    font-size: 15px;
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.835);
+    padding: 0px 22px;
+}
+
+@media (min-width:1280px){
+    .section-info{
+        width: 500px;
+        margin-right: 40px;
+        text-align: initial;
+    }
+    
+    
+    .learn-code-h1 {
+        font-size: 45px;
+        line-height: 55px;
+    }
+    
+    .p-info-card{
+        padding: 0px;
+        margin-top: 20px;
+    }
+    
+    }
