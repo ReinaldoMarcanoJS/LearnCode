@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import  { useRef } from "react";
 import useForm from "../Hooks/useform"; 
-
+import icon_Error from "../images/icon-error.svg"
 function FormValue() {
 
   const initialData = {
@@ -22,7 +22,7 @@ const form = useRef(initialData)
       };
       let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
       let regexEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-      let regexPassword  = /^(?=.[A-Za-z])(?=.\d)[A-Za-z\d]{8,}$/;
+      let regexPassword  = /A-Za-z\d$@$!%*?&]{8,15}/;
 
       if(!form.firstname.trim()){
         errors.firstname = true;
@@ -30,7 +30,7 @@ const form = useRef(initialData)
         errors.firstname = "test-reply";
       }
 
-      if(form.lastname.trim()){
+      if(!form.lastname.trim()){
         errors.lastname = true;
       }else if(!regexName.test(form.lastname)){
         errors.lastname = "test-reply";
@@ -40,7 +40,7 @@ const form = useRef(initialData)
         errors.email = true;
       }
 
-      if(!form.password.trim() && !regexPassword.test(form.password)){
+      if(!regexName.test(form.password)){
         errors.password = true;
       }
 
@@ -71,11 +71,10 @@ const form = useRef(initialData)
           placeholder="First Name" 
           name='firstname'
           value = {form.firstname}
-
           onChange={(e) => handleChange(e)}
-           />
+           ></input>
            
-          {errors.firstname && <p className="span-error-input">{errors.firstname == "test-reply" ? "only accepts letters and spaces" : "First Name cannot be empty" }</p>}
+          {errors.firstname && <p className="span-error-input">{errors.firstname == "test-reply" ? "only accepts letters and spaces" : "First Name cannot be empty"}</p>}
          
           <input 
           type="text" 
