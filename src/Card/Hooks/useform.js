@@ -52,11 +52,9 @@ const useForm = (initialData,onValidate) => {
 
     return {
         form,
-        loading,
         handleChange,
         handleSubmit,
-        errors,
-        loading
+        errors
     }
 }
 
