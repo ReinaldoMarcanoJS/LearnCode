@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 
+const useForm = (initialData,onValidate) => {
 
-
-const useForm = (initialData, onValidate) => {
-
-    const [form, setForm] = useState({initialData});
-    const [loading, setLoading] = useState(false);
-    const [errors, setErrors] = useState(null);
+    const [form, setForm] = useState(initialData);
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         const {name,value} = e.target;
@@ -15,26 +12,56 @@ const useForm = (initialData, onValidate) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('enviando formulario');
         const err = onValidate(form)
-        if ( err === null){
-            console.log('enviando formulario')
+
+        if ( err.firstname === false){
+            console.log('enviando formulario firstname')
+        } else if(err.firstname == "test-reply"){
+            setErrors(err)
+          } else{
+            setErrors(err)
+            }
+
+        if(err.lastname === false){
+            console.log('enviando formulario lastname')
+        }else if(err.lastname == "test-reply"){
+            setErrors(err)
         }else{
             setErrors(err)
         }
+
+        if ( err.email === false){
+            console.log('enviando formulario email')
+        }else if(err.email == "test-reply"){
+            setErrors(err)
+        }else{
+            setErrors(err)
+        }
+
+        if ( err.password === false){
+            console.log('enviando formulario password')
+        }else if(err.password == "test-reply"){
+            setErrors(err)
+        }else{
+            setErrors(err)
+        }
+        
     }
+
+
 
     return {
         form,
         loading,
         handleChange,
         handleSubmit,
-        errors
+        errors,
+        loading
     }
 }
 
 
-export {useForm};
+export default useForm;
 
 
 
