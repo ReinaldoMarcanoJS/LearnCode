@@ -29,8 +29,9 @@ function FormValue() {
       }else if(!regexName.test(form.lastname)){
         errors.lastname = "test-reply";
       }
-
-      if(!regexEmail.test(form.email)){
+      if(!form.email.trim()){
+        errors.email = true;
+      }else if(!regexEmail.test(form.email)){
         errors.email = true;
       }
 
