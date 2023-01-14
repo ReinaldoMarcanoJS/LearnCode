@@ -4,57 +4,53 @@ const useForm = (initialData,onValidate) => {
 
     const [form, setForm] = useState(initialData);
     const [errors, setErrors] = useState({});
-
+    const [loading,setLoading] = useState(false)
     const handleChange = (e) => {
         const {name,value} = e.target;
         setForm({...form,[name] : value})
+        
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const {name} = e.target
         const err = onValidate(form)
+        setErrors(err)
 
-        if ( err.firstname === false){
-            console.log('enviando formulario firstname')
-        } else if(err.firstname == "test-reply"){
-            setErrors(err)
-          } else{
-            setErrors(err)
-            }
-
-        if(err.lastname === false){
-            console.log('enviando formulario lastname')
-        }else if(err.lastname == "test-reply"){
-            setErrors(err)
-        }else{
+        if (Object.keys(err).length === 0){
+            
+            setLoading(true)
+            fetch("https://formsubmit.co/ajax/reynaldomarcano4@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(form)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    setForm(initialData)
+                    setLoading(false)
+                })
+                .catch(error => {
+                    console.log(error);
+                    setLoading(false)
+        });
+        }else{      
             setErrors(err)
         }
-
-        if ( err.email === false){
-            console.log('enviando formulario email')
-        }else if(err.email == "test-reply"){
-            setErrors(err)
-        }else{
-            setErrors(err)
-        }
-
-        if ( err.password === false){
-            console.log('enviando formulario password')
-        }else if(err.password == "test-reply"){
-            setErrors(err)
-        }else{
-            setErrors(err)
-        }
-        
     }
 
 
 
     return {
-        form,
         handleChange,
         handleSubmit,
-        errors
+        errors,
+        loading,
+        form
     }
 }
 

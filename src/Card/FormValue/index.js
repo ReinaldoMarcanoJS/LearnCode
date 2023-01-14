@@ -2,7 +2,8 @@ import React from "react";
 import "./index.css";
 import  { useRef } from "react";
 import useForm from "../Hooks/useform"; 
-import icon_Error from "../images/icon-error.svg"
+import {icon_Error} from "../images/icon-error.svg";
+import { BiErrorCircle } from "react-icons/bi";
 function FormValue() {
 
   const initialData = {
@@ -12,17 +13,10 @@ function FormValue() {
     password : ''
   };
     
-const form = useRef(initialData)
     const onValidate = (form) => {
-      let errors = {
-        firstname: false,
-        lastname: false,
-        email: false,
-        password: false
-      };
+      let errors = {};
       let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
       let regexEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-      let regexPassword  = /A-Za-z\d$@$!%*?&]{8,15}/;
 
       if(!form.firstname.trim()){
         errors.firstname = true;
@@ -43,16 +37,16 @@ const form = useRef(initialData)
       if(!regexName.test(form.password)){
         errors.password = true;
       }
-
       return errors
     }
     const {
       handleChange,
       handleSubmit,
-      errors
+      errors,
+      loading,
+      form
   } = useForm(initialData,onValidate);
 
-  
   return (
     <section className="section-form-content">
       <div>
@@ -63,22 +57,24 @@ const form = useRef(initialData)
       </div>
 
       <div className="div-form" >
-        <form ref={form} className="form" onSubmit={(e) => handleSubmit(e)}>
+        <form  className="form" onSubmit={(e) => handleSubmit(e)}>
 
           <input 
-          type="text" 
-          className="input-form" 
+          type= "text" 
+          className={errors.firstname ? 'check-input input-form' : 'input-form'} 
           placeholder="First Name" 
           name='firstname'
-          value = {form.firstname}
+          value = {form.value}
           onChange={(e) => handleChange(e)}
-           ></input>
-           
-          {errors.firstname && <p className="span-error-input">{errors.firstname == "test-reply" ? "only accepts letters and spaces" : "First Name cannot be empty"}</p>}
+           />
+          
+
+          {errors.firstname && <p className="span-error-input"> First Name cannot be empty</p>}
          
           <input 
           type="text" 
-          className="input-form" 
+          className={ errors.lastname ? 'check-input input-form' : 'input-form'} 
+
           placeholder="Last Name" 
           name="lastname"
           value = {form.lastname}
@@ -87,22 +83,23 @@ const form = useRef(initialData)
 
           />
           
-          {errors.lastname && <p className="span-error-input">{errors.lastname == "test-reply" ? "only accepts letters and spaces" : "Last Name cannot be empty" }</p>}
+          
+          {errors.lastname && <p className="span-error-input">Last Name cannot be empty</p>}
           <input
             type="text"
-            className="input-form"
-            placeholder="Email Address"
+            className={ errors.email ? 'check-input input-form' : 'input-form'} 
+            placeholder={errors.email ? 'email@example/com' : "Email Address"}
             name="email"
             value = {form.email}
-
             onChange={(e) => handleChange(e)}
 
             />
+          
 
           {errors.email && <p className="span-error-input">Looks like this is not an email</p>}
           <input
             type="password"
-            className="input-form"
+            className={ errors.password ? 'check-input input-form' : 'input-form'} 
             placeholder="Password"
             name="password"
             value = {form.password}
@@ -110,6 +107,7 @@ const form = useRef(initialData)
             onChange={(e) => handleChange(e)}
 
             />
+          
             
             {errors.password && <p className="span-error-input" >Password cannot be empty</p>}
 
@@ -117,8 +115,9 @@ const form = useRef(initialData)
           type="button"
           href="#" 
           className="button-form-card" 
+          disabled={loading}
           onClick={(e) => handleSubmit(e)}>
-            CLAIM YOUR FREE TRIAL
+            {loading ? 'CLAIM YOUR FREE TRIAL' : 'CLAIM YOUR FREE TRIAL'}
           </button>
 
         </form>

@@ -24,6 +24,13 @@
     font-family: 'Poppins', sans-serif;
 
 }
+.icon-E{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+    color: var(--Red);
+}
 
 .div-form{
     width: 100%;
@@ -37,21 +44,25 @@
     -webkit-box-shadow: 0px 7px 0px 0px rgb(0 0 0 / 19%);
 }
 
-.input-form{
+.input-form {
     margin: 8px 0px 4px;
     height: 40px;
     width: 81%;
     padding: 0px 15px;
     border-radius: 5px;
-    border-color: var(--Grayish-Blue);
     outline: none;
     border: solid 0px hsl(246, 25%, 77%,0.4);
     border-width: 1px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    background-color: rgb(255, 255, 255);
 }
+
+
 .input-form:hover{
-    border: solid 1px rgba(0, 0, 0, 0.636)
+    border: solid 1px rgba(0, 0, 0, 0.636);
+    background-color: rgb(255, 255, 255);
+
 }
 .button-form-card{
     margin: 15px 0px;
@@ -94,6 +105,14 @@
     font-size: 13px;
     font-style: italic;
 }
+.check-input , .check-input:hover{
+    border: solid 2px var(--Red);
+}
+.check-input::placeholder{
+    color: var(--Red);
+
+}
+
 
 @media (min-width:1280px){
         
