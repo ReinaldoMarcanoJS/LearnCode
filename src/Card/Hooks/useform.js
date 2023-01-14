@@ -18,7 +18,6 @@ const useForm = (initialData,onValidate) => {
         setErrors(err)
 
         if (Object.keys(err).length === 0){
-            
             setLoading(true)
             fetch("https://formsubmit.co/ajax/reynaldomarcano4@gmail.com", {
                 method: "POST",
@@ -40,6 +39,8 @@ const useForm = (initialData,onValidate) => {
         });
         }else{      
             setErrors(err)
+            console.log(Object.keys(err))
+
         }
     }
 

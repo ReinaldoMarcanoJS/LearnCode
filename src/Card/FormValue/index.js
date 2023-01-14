@@ -46,7 +46,6 @@ function FormValue() {
       loading,
       form
   } = useForm(initialData,onValidate);
-
   return (
     <section className="section-form-content">
       <div>
