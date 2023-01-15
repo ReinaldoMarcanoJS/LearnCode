@@ -18,30 +18,16 @@ const useForm = (initialData,onValidate) => {
 
         if (Object.keys(err).length === 0){
             setLoading(true)
-            fetch("https://formsubmit.co/ajax/reynaldomarcano4@gmail.com", {
-                method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(form)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data)
-                    setForm(initialData)
+            setTimeout(() => {
+                setForm(initialData)
+            }, 2000);
                     setLoading(false)
-                })
-                .catch(error => {
-                    console.log(error);
-                    setLoading(false)
-        })  }else{      
-            
+          }else{      
+
                 if(err.firstname){
                     initialData.firstname = "";
                 }else{
                     initialData.firstname = form.firstname;
-                    console.log(initialData.firstname)
                 }
                 if(err.lastname){
                     initialData.lastname = "";
