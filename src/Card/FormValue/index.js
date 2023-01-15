@@ -30,7 +30,7 @@ function FormValue() {
         }
       
         
-      if(regexName.test(form.email)){
+      if(!regexName.test(form.email)){
         errors.email = true;
         }
 
