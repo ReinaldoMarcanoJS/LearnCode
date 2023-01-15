@@ -122,9 +122,7 @@ function FormValue() {
             </button>
 
         </form>
-        <p className="terms-and-service-p">
-          By clicking the button, you are agreeing to our
-          <a className="terms-and-service-a">Term and Services</a>
+        <p className="terms-and-service-p">By clicking the button, you are agreeing to our <a className="terms-and-service-a">Term and Services</a>
         </p>
       </div>
     </section>
