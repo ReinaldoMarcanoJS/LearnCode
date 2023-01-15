@@ -31,7 +31,6 @@ function FormValue() {
       
         
       if(!regexName.test(form.email)){
-        errors.email = true;
         }
 
       if(!regexName.test(form.password)){
