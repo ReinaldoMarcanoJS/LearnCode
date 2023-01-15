@@ -3,6 +3,7 @@ import "./index.css";
 import useForm from "../Hooks/useform"; 
 import { BiErrorCircle } from "react-icons/bi";
 import iconError from "../images/icon-error.svg";
+import validator from "validator";
 function FormValue() {
 
   const initialData = {
@@ -30,7 +31,8 @@ function FormValue() {
         }
       
         
-      if(!regexName.test(form.email)){
+      if(!validator.isEmail(form.email)){
+        errors.email = true
         }
 
       if(!regexName.test(form.password)){
