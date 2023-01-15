@@ -45,10 +45,10 @@
 }
 
 .input-form {
-    margin: 8px 0px 4px;
+    margin: 8px 10px 4px;
     height: 40px;
     width: 81%;
-    padding: 0px 15px;
+    padding: 0px 42px 0px 14px;
     border-radius: 5px;
     outline: none;
     border: solid 0px hsl(246, 25%, 77%,0.4);
@@ -112,7 +112,18 @@
     color: var(--Red);
 
 }
+.iconError{
+    position: absolute;
+    margin: 20px 25px 0px 0px;
+    width: 20px;
+}
 
+.div-input{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    padding: 0px 10px;
+}
 
 @media (min-width:1280px){
         
@@ -131,5 +142,15 @@
             color: rgba(255, 255, 255, 0.708);
 
         }
-        
+        .iconError{
+            margin: 29px 50px 0px 0px;
+        }
+        .input-form {
+            margin: 12px 26px 5px;
+            padding: 5px 5px 5px 25px;
+            font-size: 15px;
+        }
+        .input-form {
+            width: 96%;
+        }
 }

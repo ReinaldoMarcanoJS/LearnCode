@@ -1,9 +1,8 @@
 import React from "react";
 import "./index.css";
-import  { useRef } from "react";
 import useForm from "../Hooks/useform"; 
-import {icon_Error} from "../images/icon-error.svg";
 import { BiErrorCircle } from "react-icons/bi";
+import iconError from "../images/icon-error.svg";
 function FormValue() {
 
   const initialData = {
@@ -18,18 +17,18 @@ function FormValue() {
       let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
       let regexEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 
-      if(!form.firstname.trim()){
+      if(!form.firstname === ""){
         errors.firstname = true;
       }else if(!regexName.test(form.firstname)){
-        errors.firstname = "test-reply";
+        errors.firstname = true;
       }
 
-      if(!form.lastname.trim()){
+      if(!form.lastname === ""){
         errors.lastname = true;
       }else if(!regexName.test(form.lastname)){
-        errors.lastname = "test-reply";
+        errors.lastname = true;
       }
-      if(!form.email.trim()){
+      if(!form.email === ""){
         errors.email = true;
       }else if(!regexEmail.test(form.email)){
         errors.email = true;
@@ -58,34 +57,36 @@ function FormValue() {
 
       <div className="div-form" >
         <form  className="form" onSubmit={(e) => handleSubmit(e)}>
-
-          <input 
+        <div className="div-input" >
+        <input 
           type= "text" 
           className={errors.firstname ? 'check-input input-form' : 'input-form'} 
           placeholder="First Name" 
           name='firstname'
-          value = {form.value}
+          value = {form.firstname}
           onChange={(e) => handleChange(e)}
            />
+          {errors.firstname && <img src={iconError} className="iconError"></img>}
+        </div>
+        {errors.firstname && <p className="span-error-input"> First Name cannot be empty</p>}
           
-
-          {errors.firstname && <p className="span-error-input"> First Name cannot be empty</p>}
-         
-          <input 
+        <div className="div-input">
+        <input 
           type="text" 
           className={ errors.lastname ? 'check-input input-form' : 'input-form'} 
-
           placeholder="Last Name" 
           name="lastname"
           value = {form.lastname}
-
           onChange={(e) => handleChange(e)}
-
           />
+          {errors.lastname && <img src={iconError} className="iconError"></img>}
           
+        </div>
+        {errors.lastname && <p className="span-error-input">Last Name cannot be empty</p>}
+         
           
-          {errors.lastname && <p className="span-error-input">Last Name cannot be empty</p>}
-          <input
+        <div className="div-input">
+        <input
             type="text"
             className={ errors.email ? 'check-input input-form' : 'input-form'} 
             placeholder={errors.email ? 'email@example/com' : "Email Address"}
@@ -95,9 +96,13 @@ function FormValue() {
 
             />
           
+          {errors.email &&<img src={iconError} className="iconError"></img>}
 
-          {errors.email && <p className="span-error-input">Looks like this is not an email</p>}
-          <input
+        </div>
+        {errors.email && <p className="span-error-input">Looks like this is not an email</p>}
+
+          
+        <div className="div-input"><input
             type="password"
             className={ errors.password ? 'check-input input-form' : 'input-form'} 
             placeholder="Password"
@@ -107,9 +112,12 @@ function FormValue() {
             onChange={(e) => handleChange(e)}
 
             />
+          {errors.password && <img src={iconError} className="iconError"></img>}
           
             
+            </div>
             {errors.password && <p className="span-error-input" >Password cannot be empty</p>}
+          
 
           <button 
           type="button"
