@@ -35,29 +35,29 @@ const useForm = (initialData,onValidate) => {
                 .catch(error => {
                     console.log(error);
                     setLoading(false)
-        })}else{      
-            console.log(Object.keys(err))
-            if(err.firstname){
-                initialData.firstname = "";
-            }else{
-                initialData.firstname = form.firstname;
-                console.log(initialData.firstname)
-            }
-            if(err.lastname){
-                initialData.lastname = "";
-            }else{
-                initialData.lastname = form.lastname;
-            }
-            if(err.email){
-                initialData.email = "";
-            }else{
-                initialData.email = form.email;
-            }
-            if(err.password){
-                initialData.password = "";
-            }else{
-                initialData.password = form.password;
-            }
+        })  }else{      
+            
+                if(err.firstname){
+                    initialData.firstname = "";
+                }else{
+                    initialData.firstname = form.firstname;
+                    console.log(initialData.firstname)
+                }
+                if(err.lastname){
+                    initialData.lastname = "";
+                }else{
+                    initialData.lastname = form.lastname;
+                }
+                if(err.email){
+                    initialData.email = "";
+                }else{
+                    initialData.email = form.email;
+                }
+                if(err.password){
+                    initialData.password = "";
+                }else{
+                    initialData.password = form.password;
+                }
             setForm(initialData);
             
         };

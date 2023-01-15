@@ -153,4 +153,7 @@
         .input-form {
             width: 96%;
         }
+        .span-error-input{
+            padding-right: 35px;
+        }
 }
