@@ -18,11 +18,24 @@ const useForm = (initialData,onValidate) => {
 
         if (Object.keys(err).length === 0){
             setLoading(true)
-            setTimeout(() => {
-                setForm(initialData)
-            }, 2000);
+            fetch("https://formsubmit.co/ajax/reynaldomarcano4@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(form)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    setForm(initialData)
                     setLoading(false)
-          }else{      
+                })
+                .catch(error => {
+                    console.log(error);
+                    setLoading(false)
+        })  }else{      
 
                 if(err.firstname){
                     initialData.firstname = "";

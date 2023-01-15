@@ -28,7 +28,7 @@ function FormValue() {
         }else if(!regexName.test(form.lastname)){
         errors.lastname = true;
         }
-      if(!form.email === ""){
+      if(form.email === ""){
         errors.email = true;
         }else if(!regexEmail.test(form.email)){
         errors.email = true;
@@ -93,7 +93,7 @@ function FormValue() {
               value = {form.email}
               onChange={(e) => handleChange(e)}
               />
-            {errors.email &&<img src={iconError} className="iconError"></img>}
+            {errors.email && <img src={iconError} className="iconError"></img>}
           </div>
           {errors.email && <p className="span-error-input">Looks like this is not an email</p>}
 
