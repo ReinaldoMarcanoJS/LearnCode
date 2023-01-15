@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/LearnCode/static/css/main.45523b3c.css",
-    "main.js": "/LearnCode/static/js/main.17371033.js",
+    "main.js": "/LearnCode/static/js/main.340cb380.js",
     "static/media/bg-intro-mobile.png": "/LearnCode/static/media/bg-intro-mobile.02ce398270ece1769ebc.png",
     "index.html": "/LearnCode/index.html",
     "static/media/icon-error.svg": "/LearnCode/static/media/icon-error.b72f792e9c900128f5c88f10a0d8d4b7.svg",
     "main.45523b3c.css.map": "/LearnCode/static/css/main.45523b3c.css.map",
-    "main.17371033.js.map": "/LearnCode/static/js/main.17371033.js.map"
+    "main.340cb380.js.map": "/LearnCode/static/js/main.340cb380.js.map"
   },
   "entrypoints": [
     "static/css/main.45523b3c.css",
-    "static/js/main.17371033.js"
+    "static/js/main.340cb380.js"
   ]
 }
